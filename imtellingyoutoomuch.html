@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="John Doe" />
+    <meta
+      name="description"
+      content="This page is designed to demonstrate the leaking of implementation details."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>I Am Telling You Too Much</title>
+  </head>
+  <body>
+    <h1>Implementation Details</h1>
+
+    <!-- Unwanted console logs -->
+    <script>
+      console.log(
+        "This log contains sensitive information: username: admin, password: mySecretPassword"
+      );
+      console.warn("Warning: A security vulnerability has been detected!");
+      console.error("Error: Invalid input received from the user.");
+
+      // Dummy error to be displayed in the console
+      throw new Error("Oops! Something went wrong.");
+    </script>
+
+    <!-- Meta tags leaking information -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Comments leaking information -->
+    <p>
+      <!-- This comment reveals an implementation detail: -->
+      Do not store sensitive data in the comments.
+    </p>
+
+    <p>
+      This page contains dummy filler content to further confuse the reader and
+      distract from the leaking of implementation details.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel
+      pulvinar dolor. Sed hendrerit a ex et sollicitudin.
+    </p>
+
+    <p>
+      Phasellus condimentum ipsum a tortor hendrerit, sit amet ultrices turpis
+      faucibus. Sed convallis arcu non hendrerit efficitur.
+    </p>
+
+    <p>
+      Praesent convallis ante ac est gravida, at bibendum risus rutrum. Nullam
+      pellentesque semper ligula eu ultrices.
+    </p>
+
+    <p>
+      Sed congue, risus vitae ultrices viverra, justo metus consectetur felis,
+      id lobortis odio tortor non massa.
+    </p>
+
+    <p>
+      Etiam tristique ultrices tincidunt. Suspendisse nec neque a est bibendum
+      egestas vel et erat.
+    </p>
+
+    <p>
+      Curabitur fringilla, ipsum sed condimentum rutrum, ligula nisl lobortis
+      diam, a cursus justo nisi at sem.
+    </p>
+  </body>
+</html>
